@@ -9,5 +9,8 @@ function onLoginFormSubmit(event) {
   };
   if (fieldsValues.email === "" || fieldsValues.password === "")
     alert("all fields must be filled");
-  else console.log(fieldsValues);
+  else {
+    console.log(fieldsValues);
+    loginFormRef.reset();
+  }
 }
