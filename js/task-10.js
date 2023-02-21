@@ -3,7 +3,6 @@ function getRandomHexColor() {
 }
 
 const refs = {
-  controlsContainer: document.querySelector(".controls"),
   numberInput: document.querySelector("input[type='number']"),
   createBtn: document.querySelector("button[data-create]"),
   destroyBtn: document.querySelector("button[data-destroy]"),
@@ -15,16 +14,16 @@ refs.destroyBtn.addEventListener("click", destroyBoxes);
 
 function createBoxes(amount) {
   amount = refs.numberInput.value;
-  const divs = [];
+  const boxes = [];
   for (let i = 0; i < amount; i += 1) {
-    const div = document.createElement("div");
-    div.style.width = `${30 + i * 10}px`;
-    div.style.height = `${30 + i * 10}px`;
-    div.style.backgroundColor = getRandomHexColor();
-    divs.push(div);
+    const box = document.createElement("div");
+    box.style.width = `${30 + i * 10}px`;
+    box.style.height = `${30 + i * 10}px`;
+    box.style.backgroundColor = getRandomHexColor();
+    boxes.push(box);
   }
 
-  refs.boxesContainer.append(...divs);
+  refs.boxesContainer.append(...boxes);
 }
 
 function destroyBoxes() {
